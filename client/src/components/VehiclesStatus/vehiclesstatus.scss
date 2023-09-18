@@ -3,6 +3,7 @@ $text_color: #3d3c42;
 .VehiclesStatus {
   background-color: #d7dcea2f;
   border-radius: 2px;
+  height: fit-content;
   .status_icon {
     display: flex;
     align-items: center;
@@ -34,7 +35,7 @@ $text_color: #3d3c42;
 
           p {
             margin-bottom: 0px;
-            color: $text_color;
+            color: #3d3c42c0;
             text-transform: capitalize;
           }
         }
@@ -45,7 +46,7 @@ $text_color: #3d3c42;
           align-items: center;
           p {
             margin-top: 10px;
-            color: $text_color;
+            color: #3d3c42d8;
           }
         }
       }

@@ -14,50 +14,11 @@ import {
 import './distanceChart.scss';
 
 const DistanceChart = ({vehicles}) => {
-  const data = [
-    {
-      name: 'Page A',
-      uv: 4000,
-      pv: 2400,
-      amt: 2400,
-    },
-    {
-      name: 'Page B',
-      uv: 3000,
-      pv: 1398,
-      amt: 2210,
-    },
-    {
-      name: 'Page C',
-      uv: 2000,
-      pv: 8,
-      amt: 2290,
-    },
-    {
-      name: 'Page D',
-      uv: 2780,
-      pv: 3908,
-      amt: 2000,
-    },
-    {
-      name: 'Page E',
-      uv: 18,
-      pv: 4800,
-      amt: 2181,
-    },
-    {
-      name: 'Page F',
-      uv: 2390,
-      pv: 3800,
-      amt: 2500,
-    },
-    {
-      name: 'Page G',
-      uv: 3490,
-      pv: 4300,
-      amt: 2100,
-    },
-  ];
+  const data = vehicles.slice(0, 9).map((vehicle) => ({
+    name: vehicle.name,
+    distanceCovered: vehicle.distanceCovered,
+    speed: vehicle.speed
+  }));
 
   const renderCustomizedLabel = (props) => {
     const { x, y, width, height, value } = props;
@@ -73,6 +34,29 @@ const DistanceChart = ({vehicles}) => {
     );
   };
 
+  // creating a custom tooltip
+  const renderCustomTooltip = (props) => {
+    const { active, payload, label } = props;
+  
+    if (active) {
+      return (
+        <div className="custom-tooltip">
+          <p>{`Name: ${label}`}</p>
+          {payload.map((entry) => (
+            <p key={entry.dataKey}>
+              {entry.dataKey === 'speed'
+                ? `${entry.name}: ${entry.value}kph`
+                : `${entry.name}: ${entry.value}km`}
+            </p>
+        ))}
+        </div>
+      );
+    }
+  
+    return null;
+  };
+  
+
   return (
     <div className='distance_covered'>
         <div className='distance_icon'>
@@ -80,7 +64,7 @@ const DistanceChart = ({vehicles}) => {
           <h3>Vehicle Distance</h3>
         </div>
 
-        <ResponsiveContainer width="100%" height="100%">
+        <ResponsiveContainer width="100%" height="80%">
         <BarChart
           width={500}
           height={300}
@@ -95,12 +79,13 @@ const DistanceChart = ({vehicles}) => {
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="name" />
           <YAxis />
-          <Tooltip />
+          {/* <Tooltip  /> */}
+          <Tooltip content={renderCustomTooltip} />
           <Legend />
-          <Bar dataKey="pv" fill="#8884d8" minPointSize={5}>
+          <Bar dataKey="distanceCovered" fill="#00C49F" minPointSize={5}>
             <LabelList dataKey="name" content={renderCustomizedLabel} />
           </Bar>
-          <Bar dataKey="uv" fill="#82ca9d" minPointSize={10} />
+          <Bar dataKey="speed" fill="#FF8042" minPointSize={10} />
         </BarChart>
       </ResponsiveContainer>
     </div>

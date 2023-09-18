@@ -5,16 +5,29 @@ $text_color: #3d3c42;
   background-color: #d7dcea2f;
   border-radius: 3px;
   padding: 0px 10px;
-  height: 400px;
+  height: 500px;
 
   .distance_icon {
     display: flex;
     align-items: center;
     color: $text_color;
     padding-left: 10px;
+    margin: 10px 0px 20px;
 
     .icon {
       margin-right: 10px;
     }
+  }
+}
+
+.custom-tooltip {
+  background-color: white;
+  border: 1px solid gray;
+  padding: 0px 10px;
+  border-radius: 2px;
+
+  p {
+    margin-top: 5px;
+    margin-bottom: 5px;
   }
 }

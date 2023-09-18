@@ -26,7 +26,7 @@ const VehiclesStatus = ({vehicles}) => {
                         </div>
                         
                         <div className='vehicles_position_speed'>
-                            <p>{vehicle.moving}</p>
+                            <p style={{fontWeight: "600"}}>{vehicle.moving}</p>
                             <p>{vehicle.speed} kph</p>
                         </div>
                     </div>

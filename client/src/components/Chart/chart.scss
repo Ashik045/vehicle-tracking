@@ -1,8 +1,55 @@
+$text_color: #3d3c42;
+
 .chart_component {
-  width: 100%;
-  height: 400px;
+  height: 300px;
+  background-color: #d7dcea2f;
+  border-radius: 3px;
+  padding: 0px 10px;
+  display: grid;
+  grid-template-columns: 50% 45%;
 
   .active_inactiv {
-    // display: flex;
+    display: grid;
+
+    .status_icon {
+      display: flex;
+      align-items: center;
+      color: $text_color;
+      padding-left: 10px;
+
+      .icon {
+        margin-right: 10px;
+      }
+    }
+
+    .active_inactiv_lists {
+      margin-left: 10%;
+      .active_list {
+        width: 70%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        p {
+          color: #00c49f;
+          margin-bottom: 0px;
+          display: flex;
+          align-items: center;
+        }
+      }
+
+      .inactive_list {
+        width: 70%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        p {
+          color: #ff8042;
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
   }
 }

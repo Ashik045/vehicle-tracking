@@ -27,5 +27,35 @@
     .home_sidebar {
       display: none;
     }
+
+    .home_main {
+      display: grid;
+      grid-template-columns: 100%;
+      justify-content: center;
+
+      .vehicles {
+        .vehicles_status {
+          padding: 0px 15px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .home {
+    .home_main {
+      display: grid;
+      grid-template-columns: 100%;
+      justify-content: center;
+
+      .vehicles {
+        .vehicles_status {
+          display: grid;
+          grid-template-columns: 100%;
+          justify-content: center;
+        }
+      }
+    }
   }
 }

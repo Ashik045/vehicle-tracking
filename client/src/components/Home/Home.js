@@ -1,5 +1,6 @@
 import React from 'react'
 import Chart from '../Chart/Chart'
+import DistanceChart from '../DistanceChart/DistanceChart'
 import Navbar from '../Navbar/Navbar'
 import Sidebar from '../Sidebar/Sidebar'
 import VehiclesMap from '../VehiclesMap/VehiclesMap'
@@ -36,7 +37,11 @@ const Home = () => {
                 <div className="vehicles_status">
                   <VehiclesStatus vehicles={vehicles}  />
 
-                  <Chart vehicles={vehicles} />
+                  <div className="charts">
+                    <Chart vehicles={vehicles} />
+
+                    <DistanceChart vehicles={vehicles} />
+                  </div>
                 </div>
             </div>
         </div>

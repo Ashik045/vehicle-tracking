@@ -1,0 +1,20 @@
+$text_color: #3d3c42;
+
+.distance_covered {
+  margin-top: 20px;
+  background-color: #d7dcea2f;
+  border-radius: 3px;
+  padding: 0px 10px;
+  height: 400px;
+
+  .distance_icon {
+    display: flex;
+    align-items: center;
+    color: $text_color;
+    padding-left: 10px;
+
+    .icon {
+      margin-right: 10px;
+    }
+  }
+}

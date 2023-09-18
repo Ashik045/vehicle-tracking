@@ -56,9 +56,9 @@ function Navbar() {
                                             <MdDashboard className="icon" /> Dashboard
                                         </li>
                                     </Link>
-                                    <Link to="/products" style={{ textDecoration: 'none' }}>
+                                    <Link to="/vehicles" style={{ textDecoration: 'none' }}>
                                         <li>
-                                            <MdTableChart className="icon" /> Products
+                                            <MdTableChart className="icon" /> Vehicles
                                         </li>
                                     </Link>
                                 </ul>

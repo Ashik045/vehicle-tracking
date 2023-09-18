@@ -14,12 +14,12 @@ function Sidebar() {
                     
                     <Link to="/" style={{ textDecoration: 'none' }}>
                         <li>
-                            <MdDashboard className="icon" /> Dashboard
+                            <MdDashboard className="icon" size={20} /> Dashboard
                         </li>
                     </Link>
                     <Link to="/vehicles" style={{ textDecoration: 'none' }}>
                         <li>
-                            <MdBusAlert className="icon" /> Vehicles
+                            <MdBusAlert className="icon" size={20} /> Vehicles
                         </li>
                     </Link>
                 </ul>

@@ -1,7 +1,6 @@
 $text_color: #3d3c42;
 
 .navbar {
-  // height: 60px;
   .navbar_main {
     display: flex;
     justify-content: space-between;
@@ -47,22 +46,6 @@ $text_color: #3d3c42;
           &.white {
             color: rgba(255, 255, 255, 0.699);
           }
-        }
-
-        .badge {
-          height: 18px;
-          width: 18px;
-          border-radius: 50%;
-          background-color: #4665fdde;
-          color: white;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 13px;
-          font-weight: bold;
-          position: absolute;
-          top: -7px;
-          right: -7px;
         }
 
         .admin_pic {

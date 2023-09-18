@@ -11,18 +11,18 @@ const VehiclesStatus = ({vehicles}) => {
         </div>
 
         <div className='vehicles'>
-            {vehicles.map((vehicle) => {
-                return <div className='vehicles_info'>
+            {vehicles.slice(0, 7).map((vehicle) => {
+                return <div className='vehicles_info' key={vehicle._id}>
                     <div className='status_icons'>
-                        {vehicle.moving === "Turned Left" && <MdTurnLeft />}
-                        {vehicle.moving === "Turned Right" && <MdTurnRight />}
-                        {vehicle.moving === "Stoped" && <MdOutlineStop />}
+                        {vehicle.moving === "Turned Left" && <MdTurnLeft size={22} style={{color: "#3d3c42"}} />}
+                        {vehicle.moving === "Turned Right" && <MdTurnRight size={22} style={{color: "#3d3c42"}} />}
+                        {vehicle.moving === "Stoped" && <MdOutlineStop size={22} style={{color: "#3d3c42"}} />}
                     </div>
 
                     <div className='vehicles_details'>
                         <div className='vehicles_name_date'>
-                            <p>{vehicle.name}</p>
-                            <p>{vehicle.status}</p>
+                            <p >{vehicle.name}</p>
+                            <p >{vehicle.status}</p>
                         </div>
                         
                         <div className='vehicles_position_speed'>

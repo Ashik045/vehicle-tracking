@@ -35,7 +35,6 @@ function Navbar() {
                     
                     <div className="item">
                         <FaBell className="item_icon" />
-                        <span className="badge">1</span>
                     </div>
 
                     <div className="item">

@@ -30,23 +30,7 @@ const VehiclesMap = (props) => {
         zoom={13}
         style={mapStyles}
         initialCenter={{ lat: 51.505, lng: -0.09 }}
-        styles={[
-        {
-            featureType: 'water',
-            elementType: 'geometry',
-            stylers: [
-                { color: '#3d85c6' }, // Change the water color
-            ],
-        },
-        {
-            featureType: 'road',
-            elementType: 'geometry',
-            stylers: [
-                { color: '#4caf50' }, // Change the road color
-            ],
-        },
-        // Add more styling options as needed
-    ]}
+       
       >
         
         {vehicles.map((vehicle) => (

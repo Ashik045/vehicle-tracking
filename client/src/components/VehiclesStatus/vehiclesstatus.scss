@@ -13,13 +13,14 @@ $text_color: #3d3c42;
 
   .vehicles {
     .vehicles_info {
+      background-color: #d7dcea2f;
       display: grid;
       grid-template-columns: 10% 70%;
       align-items: center;
-
-      .status_icons {
-        //
-      }
+      margin-bottom: 8px;
+      border-radius: 4px;
+      padding: 0px 5px;
+      cursor: pointer;
 
       .vehicles_details {
         .vehicles_name_date {
@@ -30,6 +31,7 @@ $text_color: #3d3c42;
           p {
             margin-bottom: 0px;
             color: $text_color;
+            text-transform: capitalize;
           }
         }
 

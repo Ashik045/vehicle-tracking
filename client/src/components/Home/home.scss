@@ -1,16 +1,18 @@
 .home {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+
   .home_main {
     display: grid;
-    grid-template-columns: 18% 82%;
+    grid-template-columns: 18% 80%;
     justify-content: center;
 
     .vehicles {
       .vehicles_status {
-        margin-top: 580px;
+        // margin-top: 580px;
         display: grid;
         grid-template-columns: 30% 65%;
         gap: 20px;
-        justify-content: center;
       }
     }
   }

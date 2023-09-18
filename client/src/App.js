@@ -1,4 +1,3 @@
-import './App.css';
 import Home from './components/Home/Home';
 
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
@@ -14,7 +13,7 @@ function App() {
         </Route>
           
         <Route path="vehicles">
-            <Route index element={<Vehicles type="product" />} />
+            <Route index element={<Vehicles />} />
         </Route>
       </Routes>
     </Router>

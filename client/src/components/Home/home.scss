@@ -5,8 +5,13 @@
     justify-content: center;
 
     .vehicles {
-      //   max-width: 100% !important;
-      //   box-sizing: border-box !important;
+      .vehicles_status {
+        margin-top: 580px;
+        display: grid;
+        grid-template-columns: 30% 65%;
+        gap: 20px;
+        justify-content: center;
+      }
     }
   }
 }

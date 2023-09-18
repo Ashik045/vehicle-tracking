@@ -8,17 +8,16 @@ function App() {
   return (
     <div className="App">
     <Router>
-    <Routes>
-      <Route path="/">
-        <Route index element={<Home />} />
-      </Route>
-        
-      <Route path="vehicles">
-          <Route index element={<Vehicles type="product" />} />
-      </Route>
+      <Routes>
+        <Route path="/">
+          <Route index element={<Home />} />
+        </Route>
+          
+        <Route path="vehicles">
+            <Route index element={<Vehicles type="product" />} />
+        </Route>
       </Routes>
     </Router>
-      
     </div>
   );
 }

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { FaAlignLeft, FaBell, FaWindowClose } from "react-icons/fa";
+import { FaAlignLeft, FaBell } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 // import sass file
-import { MdDashboard, MdTableChart } from "react-icons/md";
+import { MdClose, MdDashboard, MdTableChart } from "react-icons/md";
 import './navbar.scss';
 
 // import images
@@ -20,15 +20,15 @@ function Navbar() {
             <div className="navbar_main">
                 <div className="menu_logo">
                     {toggle ? (
-                        <FaWindowClose className="menu_icon" onClick={handleToggle} />
+                        <MdClose className="menu_icon" onClick={handleToggle} size={24}  />
                     ) : (
                         <FaAlignLeft className="menu_icon" onClick={handleToggle} />
                     )}
-
+                   
+                </div>
                     <Link to="/" style={{ textDecoration: 'none' }}>
                         <h3 className="text_none">Dashboard</h3>
                     </Link>
-                </div>
                 
 
                 <div className="item_lists">
@@ -50,7 +50,7 @@ function Navbar() {
                         <div className="res_nav_menuu">
                             <div className="links">
                                 <ul>
-                                    <p className="spann">Main</p>
+                                    
                                     <Link to="/" style={{ textDecoration: 'none' }}>
                                         <li>
                                             <MdDashboard className="icon" /> Dashboard

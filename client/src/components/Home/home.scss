@@ -3,6 +3,11 @@
     display: grid;
     grid-template-columns: 18% 82%;
     justify-content: center;
+
+    .vehicles {
+      //   max-width: 100% !important;
+      //   box-sizing: border-box !important;
+    }
   }
 }
 

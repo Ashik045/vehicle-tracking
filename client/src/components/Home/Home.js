@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from '../Navbar/Navbar'
 import Sidebar from '../Sidebar/Sidebar'
+import VehiclesMap from '../VehiclesMap/VehiclesMap'
 import './home.scss'
 
 const Home = () => {
@@ -10,11 +11,11 @@ const Home = () => {
        
 
         <div className="home_main">
-        <div className="home_sidebar">
-            <Sidebar />
-        </div>
-            <div className="home_items">
-                <h1>vehicle tracking app</h1>
+            <div className="home_sidebar">
+                <Sidebar />
+            </div>
+            <div className="vehicles">
+                <VehiclesMap />
             </div>
         </div>
     </div>

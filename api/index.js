@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 const dotenv = require('dotenv');
 const express = require('express');
 const cors = require('cors');

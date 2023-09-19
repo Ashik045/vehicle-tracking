@@ -13,7 +13,7 @@ import {
 } from 'recharts';
 import './distanceChart.scss';
 
-const DistanceChart = ({vehicles, size}) => {
+const DistanceChart = ({vehicles, size, loading}) => {
   const data = vehicles.slice(0, size).map((vehicle) => ({
     name: vehicle.name,
     distanceCovered: vehicle.distanceCovered,
@@ -63,6 +63,8 @@ const DistanceChart = ({vehicles, size}) => {
             <MdOutlineMultipleStop size={24} className='icon'  />
           <h3>Vehicle Distance</h3>
         </div>
+
+        {(!loading && vehicles.length === 0) && <p style={{"textAlign": "center"}}>No data to show!</p>}
 
         <ResponsiveContainer width="100%" height="80%">
         <BarChart

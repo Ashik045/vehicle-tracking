@@ -22,6 +22,31 @@ $text_color: #3d3c42;
       }
     }
 
+    .loader_div {
+      text-align: center;
+      padding-bottom: 20px;
+      .loader {
+        width: 37px;
+        height: 37px;
+        border: 5px solid $text_color;
+        border-bottom-color: transparent;
+        border-radius: 50%;
+        display: inline-block;
+        box-sizing: border-box;
+        animation: rotation 1s linear infinite;
+        text-align: center;
+      }
+
+      @keyframes rotation {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    }
+
     .active_inactiv_lists {
       margin-left: 10%;
       .active_list {

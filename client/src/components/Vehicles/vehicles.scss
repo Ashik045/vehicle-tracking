@@ -1,0 +1,140 @@
+$text_color: #3d3c42;
+
+.vehicles_page {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+
+  .vehicles_page_main {
+    display: grid;
+    grid-template-columns: 18% 80%;
+    justify-content: space-between;
+
+    .vehicles {
+      margin-top: 20px;
+
+      .vehicles_search {
+        form {
+          display: flex;
+          align-items: center;
+
+          input[type="text"] {
+            padding: 5px 10px;
+            border: 1px solid gray;
+            outline: none;
+            border-radius: 3px;
+            font-size: 15px;
+            color: $text_color;
+            width: 350px;
+          }
+
+          input[type="submit"] {
+            padding: 4px 10px;
+            border: 1px solid gray;
+            outline: none;
+            border-radius: 3px;
+            font-size: 17px;
+            background-color: $text_color;
+            color: white;
+            margin-left: 3px;
+            cursor: pointer;
+          }
+
+          .filter_btn {
+            // text-decoration: underline;
+            cursor: pointer;
+            margin-left: 15px;
+            margin-right: 5px;
+          }
+
+          .filter_option {
+            select {
+              padding: 2px 5px;
+              font-size: 15px;
+              border: 1px solid $text_color;
+              border-radius: 3px;
+              cursor: pointer;
+
+              option {
+                // padding: 3px 5px;
+                // font-size: 15px;
+              }
+            }
+          }
+        }
+      }
+
+      .all_vehicles {
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: 30% 65%;
+        gap: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .vehicles_page {
+    .vehicles_page_main {
+      display: grid;
+      grid-template-columns: 100%;
+      justify-content: center;
+
+      .vehicles_sidebar {
+        display: none;
+      }
+
+      .vehicles {
+        .vehicles_search {
+          padding: 0px 10px;
+        }
+
+        .all_vehicles {
+          display: grid;
+          grid-template-columns: 100%;
+          gap: 20px;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .vehicles_page {
+    .vehicles_page_main {
+      display: grid;
+      grid-template-columns: 100%;
+      justify-content: center;
+
+      .vehicles_sidebar {
+        display: none;
+      }
+
+      .vehicles {
+        .vehicles_search {
+          padding: 0px 5px;
+
+          form {
+            input[type="text"] {
+              font-size: 15px;
+              width: 250px;
+            }
+
+            .filter_btn {
+              cursor: pointer;
+              margin-left: 5px;
+              margin-right: 5px;
+            }
+
+            .filter_option {
+              select {
+                padding: 2px 2px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

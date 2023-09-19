@@ -2,7 +2,7 @@ import React from 'react';
 import { MdOutlineStop, MdSensors, MdTurnLeft, MdTurnRight } from 'react-icons/md';
 import './vehiclesstatus.scss';
 
-const VehiclesStatus = ({vehicles}) => {
+const VehiclesStatus = ({vehicles, size}) => {
   return (
     <div className='VehiclesStatus'>
         <div className='status_icon'>
@@ -11,7 +11,7 @@ const VehiclesStatus = ({vehicles}) => {
         </div>
 
         <div className='vehicles'>
-            {vehicles.slice(0, 7).map((vehicle) => {
+            {vehicles.slice(0, size).map((vehicle) => {
                 return <div className='vehicles_info' key={vehicle._id}>
                     <div className='status_icons'>
                         {vehicle.moving === "Turned Left" && <MdTurnLeft size={22} style={{color: "#3d3c42"}} />}

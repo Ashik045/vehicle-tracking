@@ -13,8 +13,8 @@ import {
 } from 'recharts';
 import './distanceChart.scss';
 
-const DistanceChart = ({vehicles}) => {
-  const data = vehicles.slice(0, 9).map((vehicle) => ({
+const DistanceChart = ({vehicles, size}) => {
+  const data = vehicles.slice(0, size).map((vehicle) => ({
     name: vehicle.name,
     distanceCovered: vehicle.distanceCovered,
     speed: vehicle.speed

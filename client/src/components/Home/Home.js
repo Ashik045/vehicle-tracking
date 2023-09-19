@@ -50,12 +50,12 @@ setInterval(updateDistanceCoveredKm, 1000); // Adjust the interval as needed
                 <VehiclesMap />
 
                 <div className="vehicles_status">
-                  <VehiclesStatus vehicles={vehicles}  />
+                  <VehiclesStatus vehicles={vehicles} size={9}  />
 
                   <div className="charts">
                     <Chart vehicles={vehicles} />
 
-                    <DistanceChart vehicles={vehicles} />
+                    <DistanceChart vehicles={vehicles} size={9} />
                   </div>
                 </div>
             </div>

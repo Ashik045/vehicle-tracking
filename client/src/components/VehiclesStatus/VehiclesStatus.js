@@ -11,7 +11,7 @@ const VehiclesStatus = ({vehicles, size, loading}) => {
         </div>
 
         <div className='vehicles'>
-            {loading ? <div className='loader_div'> <span className="loader"></span> </div> : vehicles.slice(0, size).map((vehicle) => {
+            {loading ? <div className='loader_div'> <span className="loader"></span> </div> : vehicles?.slice(0, size).map((vehicle) => {
                 return <div className='vehicles_info' key={vehicle._id}>
                     <div className='status_icons'>
                         {vehicle.moving === "Turned Left" && <MdTurnLeft size={22} style={{color: "#3d3c42"}} />}
@@ -22,7 +22,7 @@ const VehiclesStatus = ({vehicles, size, loading}) => {
                     <div className='vehicles_details'>
                         <div className='vehicles_name_date'>
                             <p >{vehicle.name}</p>
-                            <p >{vehicle.status}</p>
+                            <p style={{color: vehicle.status === "inactive" && "#ec4d38"}}>{vehicle.status}</p>
                         </div>
                         
                         <div className='vehicles_position_speed'>

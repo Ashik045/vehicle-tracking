@@ -12,7 +12,6 @@ const Home = () => {
   const [vehicles, setVehicles] = useState([])
   const [loading, setLoading] = useState(false)
 
-
   useEffect(() => {
     const fetchVehicles = async () => {
       try {

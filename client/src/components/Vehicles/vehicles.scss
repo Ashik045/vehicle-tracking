@@ -47,8 +47,9 @@ $text_color: #3d3c42;
           }
 
           .filter_option {
+            margin: 0px 5px 0px 10px;
             select {
-              padding: 2px 5px;
+              padding: 4px 5px;
               font-size: 15px;
               border: 1px solid $text_color;
               border-radius: 3px;
@@ -64,7 +65,7 @@ $text_color: #3d3c42;
       }
 
       .all_vehicles {
-        margin-top: 20px;
+        margin-top: 30px;
         display: grid;
         grid-template-columns: 30% 65%;
         gap: 20px;

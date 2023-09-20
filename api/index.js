@@ -79,6 +79,6 @@ app.use((err, req, res, next) => {
 
 // server running
 /* listening for incoming requests on the specified port. */
-app.listen(process.env.APPLICATION_PORT || 4000, () => {
-    console.log(`Application running on port ${process.env.APPLICATION_PORT}`);
+app.listen(process.env.PORT || 4000, () => {
+    console.log(`Application running on port ${process.env.PORT}`);
 });

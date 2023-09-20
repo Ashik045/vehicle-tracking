@@ -77,18 +77,18 @@ const Vehicles = () => {
               <div className="vehicles_search">
                 <form onSubmit={handleFormSubmit}>
                   <input type="text" value={value} onChange={(e) =>setValue(e.target.value)} />
-
-                  <input type="submit" value="Search" />
                   
-                  <p onClick={handleFilter} className="filter_btn">Filter:</p>
+                  {/* <p onClick={handleFilter} className="filter_btn">Filter:</p> */}
 
-                  { <div className="filter_option">
+                   <div className="filter_option">
                     <select value={filterVal} onChange={((e) => setFilterVal(e.target.value))}>
-                      <option value="All">All</option>
-                      <option value="Active">Active</option>
+                      <option value="all">All</option>
+                      <option value="active">Active</option>
                       <option value="inactive">Inactive</option>
                     </select>
-                  </div>}
+                  </div>
+
+                  <input type="submit" value="Search" />
                 </form>
               </div>
 

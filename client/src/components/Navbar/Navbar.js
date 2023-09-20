@@ -11,6 +11,8 @@ import admin from '../../images/no-photo.png';
 function Navbar() {
     const [toggle, setToggle] = useState(false);
 
+
+// The handleToggle function toggles the value of the toggle state variable.
     const handleToggle = () => {
         setToggle(!toggle);
     };

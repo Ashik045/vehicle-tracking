@@ -1,6 +1,7 @@
 /* eslint-disable comma-dangle */
 const mongoose = require('mongoose');
 
+// create a new schema
 const vehicleSchema = new mongoose.Schema(
     {
         name: String,

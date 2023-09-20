@@ -9,6 +9,7 @@ const createVehicel = async (req, res) => {
         // save the vehicle
         await newVehicle.save();
 
+        // send the success message
         res.status(201).json({ message: 'Vehicle created successfully', vehicle: newVehicle });
     } catch (error) {
         res.status(500).json({ message: 'Internal Server Error!' });
@@ -18,7 +19,8 @@ const createVehicel = async (req, res) => {
 // Controller to get a vehicle by ID
 const getVehicle = async (req, res) => {
     try {
-        const vehicleId = req.params.id; // Get the vehicle ID from the URL parameter
+        // Get the vehicle ID from the URL parameter
+        const vehicleId = req.params.id;
 
         // Use Mongoose to find the vehicle by its ID
         const vehicle = await Vehicle.findById(vehicleId);

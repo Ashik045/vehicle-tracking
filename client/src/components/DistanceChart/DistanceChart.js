@@ -14,12 +14,15 @@ import {
 import './distanceChart.scss';
 
 const DistanceChart = ({vehicles, size, loading}) => {
+// extracting specific properties from each vehicle object.
   const data = vehicles?.slice(0, size).map((vehicle) => ({
     name: vehicle.name,
     distanceCovered: vehicle.distanceCovered,
     speed: vehicle.speed
   }));
 
+
+// rendering customized label for a chart.
   const renderCustomizedLabel = (props) => {
     const { x, y, width, height, value } = props;
     const radius = 10;

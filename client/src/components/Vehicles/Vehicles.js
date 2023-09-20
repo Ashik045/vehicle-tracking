@@ -8,11 +8,11 @@ import './vehicles.scss'
 
 const Vehicles = () => {
   const [value, setValue] = useState("")
-  const [filter, setFilter] = useState(false)
   const [loading, setLoading] = useState(false)
   const [filterVal, setFilterVal] = useState("")
   const [vehicles, setVehicles] = useState([])
 
+// fetch the list of vehicles from the API when the component mounts. 
   useEffect(() => {
     const fetchVehicles = async () => {
       try {
@@ -34,10 +34,9 @@ const Vehicles = () => {
     fetchVehicles()
   }, [])
 
-  const handleFilter = () => {
-    setFilter(!filter)
-  }
 
+// API request to retrieve vehicle data based on search and filter parameters, and then updates the
+// state with the retrieved data.
   const handleFormSubmit = async (e) => {
     e.preventDefault()
 
@@ -52,6 +51,7 @@ const Vehicles = () => {
       if (filterVal) {
         apiUrl += `filter=${filterVal}`;
       }
+      // fetch
     const res = await axios.get(apiUrl)
 
     const vehicles = res.data?.message

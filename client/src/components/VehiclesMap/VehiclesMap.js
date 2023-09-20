@@ -14,7 +14,9 @@ const VehiclesMap = ( {vehicles, google, loading}) => {
 
     // Establish a WebSocket connection when the component mounts
   useEffect(() => {
-    const socket = socketIOClient('http://localhost:4000'); // Replace with your backend URL
+    const socket = socketIOClient('https://vehicle-tacking.onrender.com', {
+      withCredentials: true, 
+    }); 
 
     // Request initial data when the component connects
     socket.emit('getInitialData');
@@ -32,6 +34,9 @@ const VehiclesMap = ( {vehicles, google, loading}) => {
     };
   }, []);
 
+
+// The onMarkerClick function sets the active marker and shows the info window when a marker is
+// clicked.
   const onMarkerClick = (props, marker, e) => {
     setActiveMarker(marker);
     setShowInfoWindow(true);
@@ -85,5 +90,5 @@ const VehiclesMap = ( {vehicles, google, loading}) => {
 }
 
 export default GoogleApiWrapper({
-    apiKey: 'AIzaSyB0jhHfbe9vIufepGNqwnM7O0Rp-p-nKts', // Replace with your API key
+    apiKey: process.env.MAP_API_KEY, 
   })(VehiclesMap);

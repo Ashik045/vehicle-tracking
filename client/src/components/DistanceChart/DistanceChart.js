@@ -14,7 +14,7 @@ import {
 import './distanceChart.scss';
 
 const DistanceChart = ({vehicles, size, loading}) => {
-  const data = vehicles.slice(0, size).map((vehicle) => ({
+  const data = vehicles?.slice(0, size).map((vehicle) => ({
     name: vehicle.name,
     distanceCovered: vehicle.distanceCovered,
     speed: vehicle.speed
@@ -42,7 +42,7 @@ const DistanceChart = ({vehicles, size, loading}) => {
       return (
         <div className="custom-tooltip">
           <p>{`Name: ${label}`}</p>
-          {payload.map((entry) => (
+          {payload?.map((entry) => (
             <p key={entry.dataKey}>
               {entry.dataKey === 'speed'
                 ? `${entry.name}: ${entry.value}kph`

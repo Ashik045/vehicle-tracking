@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 
 // internal imports
 const vehicleRoute = require('./routes/vehicle');
+const Vehicle = require('./models/vehicles');
 
 // modules
 const app = express();
@@ -19,25 +20,32 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Implement the updateVehiclePositions function to update vehicle positions
-function updateVehiclePositions() {
-    // Implement logic to update vehicle positions here
-    // This function should return the updated list of vehicles
-    // You can mock this data for testing
-    const updatedVehicles = 'hello';
-    return updatedVehicles;
-}
+const updateVehiclePositions = async () => {
+    try {
+        // Implement logic to fetch vehicle data from MongoDB
+        const updatedVehicles = await Vehicle.find(); // You may need to add filters if required
+        return updatedVehicles;
+    } catch (error) {
+        console.error('Error updating vehicle positions:', error);
+        return [];
+    }
+};
 
 // Handle WebSocket connections
 io.on('connection', (socket) => {
     console.log('A client connected');
 
-    // Handle real-time updates here
-    // You can emit updates to connected clients whenever vehicle positions change
-    // For example, emit updates when you receive new data from a source
+    // Emit vehicle data to clients when they connect
+    socket.on('getInitialData', async () => {
+        const updatedVehicles = await updateVehiclePositions();
+        socket.emit('vehicleUpdates', updatedVehicles);
+    });
 
-    // Example: Emit a message to all connected clients every second
-    setInterval(() => {
-        const updatedVehicles = updateVehiclePositions(); // function to update vehicle positions
+    // Handle real-time updates here
+    // Example: Emit updates to connected clients when new data arrives
+    // Update the emit logic as per your requirements
+    setInterval(async () => {
+        const updatedVehicles = await updateVehiclePositions();
         socket.emit('vehicleUpdates', updatedVehicles);
     }, 1000);
 

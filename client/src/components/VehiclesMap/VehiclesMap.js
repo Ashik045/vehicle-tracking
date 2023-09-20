@@ -1,5 +1,6 @@
 import { GoogleApiWrapper, InfoWindow, Map, Marker } from 'google-maps-react';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import socketIOClient from 'socket.io-client';
 import './vehiclesmap.scss';
 
 const VehiclesMap = ( {vehicles, google, loading}) => {
@@ -8,8 +9,28 @@ const VehiclesMap = ( {vehicles, google, loading}) => {
         height: '550px',
       };
 
-      const [activeMarker, setActiveMarker] = useState(null);
-  const [showInfoWindow, setShowInfoWindow] = useState(false);
+    const [activeMarker, setActiveMarker] = useState(null);
+    const [showInfoWindow, setShowInfoWindow] = useState(false);
+
+    // Establish a WebSocket connection when the component mounts
+  useEffect(() => {
+    const socket = socketIOClient('http://localhost:4000'); // Replace with your backend URL
+
+    // Request initial data when the component connects
+    socket.emit('getInitialData');
+
+    // Listen for updates
+    socket.on('vehicleUpdates', (updatedVehicles) => {
+      // Handle updated vehicle data here
+      console.log('Received updated vehicle data:', updatedVehicles);
+      // Update your component's state with the updated data
+    });
+
+    return () => {
+      // Clean up the WebSocket connection when the component unmounts
+      socket.disconnect();
+    };
+  }, []);
 
   const onMarkerClick = (props, marker, e) => {
     setActiveMarker(marker);
@@ -34,7 +55,7 @@ const VehiclesMap = ( {vehicles, google, loading}) => {
         
         {!loading && vehicles?.map((vehicle) => (
         <Marker
-          key={vehicle.id}
+          key={vehicle._id}
           position={{ lat: vehicle.lat, lng: vehicle.lng }}
           name={vehicle.name}
           speed={vehicle.speed}

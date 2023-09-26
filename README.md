@@ -1,4 +1,4 @@
-## A Mini Vehicle Tracking Dashboard
+## A Mini Vehicle Tracking Dashboard.
 
 #### Developed a vehicle tracking dashboard, leveraging React.js, Node.js and MongoDB to efficiently store, manage, and seamlessly deliver real-time updates on vehicle movement and speed. I've ensured that the codebase is both easily comprehensible and well-documented.
 
